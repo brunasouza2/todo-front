@@ -1,0 +1,203 @@
+ /* The container */
+ .content {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .list input[type=checkbox] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .list .checkmark {
+    position: relative;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    display: block;
+    top: 25px;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .list:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .list input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .list .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .list input:checked ~ .checkmark:after {
+    display: block;
+    color: white;    
+    font-style: italic;
+    text-decoration: line-through;
+  }
+
+  .list input[type=checkbox]:checked ~ label {
+        color: white;    
+        font-style: italic;
+        text-decoration: line-through;
+    }
+  
+  /* Style the checkmark/indicator */
+  .list .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    text-align: center;
+}
+
+.title {
+    font-family: cursive;
+    font-size: 19px;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 10px;
+}
+
+.list {
+    list-style: none;
+    padding-bottom: 10px;
+    font-size: 20px;
+}
+
+.container-button {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.container-button button {
+    background-color: white;
+    color: #777;
+    font-size: 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 6px 18px;
+    display: inline-block;
+    position: relative;
+    border: none;
+    cursor: pointer;
+}
+
+.container-button button:focus {
+    outline: none;
+}
+
+.container-button button:active {
+    box-shadow: 0 .5rem 1rem rgba(0,0,0, .15);
+    transform: translateY(0);
+}
+
+
+.container-input input {
+    font-size: 1.5rem;
+    font-family: inherit;
+    color: #777;
+    padding:  7px;
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, .5);
+    border: none;
+    border-bottom: 3px solid transparent;
+    width: 100%;
+    display: block;
+    transition: all .3s;
+    box-sizing: border-box;
+}
+
+.container-input input:focus {
+    outline: none;
+}
+
+.rolldown-list {
+    text-align: left;
+    padding: 0;
+    margin: 0;
+    margin-top: 20px;
+    overflow:hidden; 
+    overflow-y:auto;
+    height: 400px;
+  }
+  
+  .rolldown-list li {
+    padding: 0px 20px 20px 20px;
+    margin-bottom: .125em;
+    display: block;
+    list-style: none;
+    text-transform: uppercase;
+  }
+  .rolldown-list li:nth-child(2n) {
+    background-color: #28b485;
+    color: white;
+  }
+  
+  .rolldown-list li:nth-child(2n+1) {
+    background-color: #55c57a;
+    color: white;
+  }
+  
+  /* width */
+::-webkit-scrollbar {
+    width: 20px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #239F75; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #239F75; 
+  }
+
+  .container-sub {
+      width: 60%;
+  }
+

@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="container-sub">
+
+    <div class="header">
+      <h1 class="title">Adicionar tarefa</h1>
+    </div>
+    <div class="container-input">
+      <input #myInput type="text" [(ngModel)]="task.nome" (keyup.enter)="addTask()">      
+    </div>
+    <div class="container-button">
+        <button (click)="addTask()">Adicionar</button>
+    </div>
+    <p *ngIf="taskList.length==0; else loggedOut"><app-notification></app-notification></p>
+    <ng-template #loggedOut>
+      <nav>
+          <ul class="rolldown-list">
+              <li *ngFor="let item of taskList" class="list">
+                <input type="checkbox" [checked]="item.done" (change)="checkTask(item)" id={{item._id}}>
+                <span class="checkmark"></span>
+                <label class="content" for={{item._id}}>{{item.nome}}</label>
+              </li>
+            </ul>
+        </nav>    
+    </ng-template>
+
+  </div> 
+
+</div>
