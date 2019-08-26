@@ -10,19 +10,17 @@ export class AuthService {
   private pUser = new BehaviorSubject(null);
   currentUser = this.pUser.asObservable();
 
-  private property = new ReplaySubject(1);
-
   constructor(private httpClient: HttpClient) {
     let storedProp = localStorage.getItem('storedProp');
     if (storedProp)
-        this.setUser(JSON.parse(storedProp), false);
+      this.setUser(JSON.parse(storedProp), false);
   }
   
   login(email, password){
     const user = {
       usuario: email,
       senha: password
-    }
+    }  
     return this.httpClient.post('http://localhost:3000/v1/login',user);
   }
 

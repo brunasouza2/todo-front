@@ -1,3 +1,4 @@
+import { HeaderComponent } from './../header/header.component';
 import { NotificationComponent } from './../notification/notification.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
@@ -12,7 +13,7 @@ const routes: Routes = [
 
 
 @NgModule({
-  declarations: [TodoComponent],
+  declarations: [TodoComponent, HeaderComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

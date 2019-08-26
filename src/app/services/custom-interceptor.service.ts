@@ -19,16 +19,14 @@ export class CustomInterceptorService implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     const cloneReq = request.clone({
-      headers: request.headers.set('Authorization', localStorage.getItem('token'))
+      headers: request.headers.set('Authorization', localStorage.getItem('token')?localStorage.getItem('token'):'')
     });
     return next.handle(cloneReq)
       .do((evento: HttpEvent<any>) => {
         if (evento instanceof HttpResponse) {
-          console.log(evento);
         }
       }).catch(resposta => {
         if (resposta instanceof HttpErrorResponse) {
-          console.log(resposta);
         }
 
         return Observable.throw(resposta);

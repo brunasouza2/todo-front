@@ -32,9 +32,10 @@ export class TodoComponent implements OnInit {
 
   ngOnInit() {
     const token = localStorage.getItem('token');
-    if (token) {
-      this.token = token
+    if (token==null) {      
+      this.router.navigateByUrl('/auth/login');
     }
+    this.token = token
 
     this.authService.getUser()
     .subscribe((user) => {
@@ -51,8 +52,7 @@ export class TodoComponent implements OnInit {
   addTask(){
     if(this.task.nome!=''){
         this.todoService.create({...this.task, userId: this.user.id}, this.token ).subscribe((result) => {
-        console.log('task', this.task);
-        //this.todoService.create(this.task, this.token ).subscribe((result) => {
+
         this.listarTask();
         this.clearTask();
       })  
@@ -79,17 +79,20 @@ export class TodoComponent implements OnInit {
   }
 
   listarTask(){    
-      console.log('listar');
       this.todoService.getAll(this.token, this.user.id).subscribe(
         res => {
-          console.log('getAll', res);
           this.taskList = res;
         },
         err => { 
-          console.log('ERRADO', err);
           this.router.navigateByUrl('/auth/login');
         }
       );
+  }
+
+  deletar(item: Task){
+    this.todoService.delete(item._id, this.token ).subscribe((result) => {
+      this.listarTask();
+    })  
   }
 
 }

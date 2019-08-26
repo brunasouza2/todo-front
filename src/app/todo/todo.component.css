@@ -1,6 +1,5 @@
  /* The container */
  .content {
-    display: block;
     position: relative;
     padding-left: 35px;
     cursor: pointer;
@@ -155,7 +154,7 @@
     margin-top: 20px;
     overflow:hidden; 
     overflow-y:auto;
-    height: 400px;
+    height: 377px;
   }
   
   .rolldown-list li {
@@ -200,4 +199,16 @@
   .container-sub {
       width: 60%;
   }
+
+  .icon {
+    float: right;
+    right: 0;
+    cursor: pointer;
+  }
+
+  .icon:active {
+    box-shadow: 0 .5rem 1rem rgba(0,0,0, .15);
+    transform: translateY(0);
+}
+
 

@@ -50,7 +50,7 @@ export class TodoService {
     return this.http.patch(this.url + '/' + id, todo, headers);
   }
 
-  delete(id: number, token) {
+  delete(id, token) {
     const headers = {
       headers: {
         Authorization: token
