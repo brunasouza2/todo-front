@@ -1,0 +1,125 @@
+.container, .div-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.container-item {
+    background-color: rgba(35, 159, 117, 0.6);
+    border-radius: 5px;
+    margin: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.title {
+    font-family: cursive;
+    font-size: 19px;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 10px 10px 24px 10px;
+}
+
+.label-element {
+    display: block;
+    color: white;
+    font-size: 19px;
+    font-family: sans-serif;
+    margin: 5px 0 5px 0px;
+}
+
+.input-element{
+    font-size: 1.3rem;
+    font-family: inherit;
+    color: #777;
+    padding:  4px;
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, .5);
+    border: none;
+    border-bottom: 3px solid transparent;
+    width: 100%;
+    display: block;
+    transition: all .3s;
+    box-sizing: border-box;
+}
+
+.input-element:focus {
+    outline: none;
+}
+
+.div-button {
+    display: grid;
+    margin-top: 15px;
+}
+
+.div-button button {
+    background-color: white;
+    color: #777;
+    font-size: 14px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 6px 18px;
+    display: inline-block;
+    position: relative;
+    border: none;
+    cursor: pointer;
+    height: 35px;
+}
+
+.div-button button:focus {
+    outline: none;
+}
+
+.div-button button:active {
+    box-shadow: 0 .5rem 1rem rgba(0,0,0, .15);
+    transform: translateY(0);
+}
+
+.div-link{
+    margin-top: 20px;
+}
+
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+  }
+  
+  #snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+  
+  @-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }

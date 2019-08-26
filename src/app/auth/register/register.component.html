@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="container-item">
+        <h1 class="title">Registre-se para entrar</h1>
+        <div class="div-email">
+            <label class="label-element">Usuario</label>
+            <input type="text" class="input-element" [(ngModel)]="newUser.usuario" (keyup.enter)="registerUser()">
+        </div>
+        <div class="div-senha">
+            <label class="label-element">Senha</label>
+            <input type="password" class="input-element" [(ngModel)]="newUser.senha" (keyup.enter)="registerUser()">
+        </div>
+        <div class="div-senha">
+            <label class="label-element">Confirmar Senha</label>
+            <input type="password" class="input-element"[(ngModel)]="confirmSenha" (keyup.enter)="registerUser()">
+        </div>
+        <div class="div-button">
+            <button (click)="registerUser()">Registrar</button>
+        </div>
+    </div>
+</div>
+<div id="snackbar">Notification..</div>

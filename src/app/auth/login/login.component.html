@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="container-item">
+        <h1 class="title">Faça login para entrar</h1>
+        <div class="div-email">
+            <label class="label-element">Usuario</label>
+            <input type="text" class="input-element" [(ngModel)]="user.usuario" (keyup.enter)="logar()">
+        </div>
+        <div class="div-senha">
+            <label class="label-element">Senha</label>
+            <input type="password" class="input-element" [(ngModel)]="user.senha" (keyup.enter)="logar()">
+        </div>
+        <div class="div-button">
+            <button (click)="logar()">Entrar</button>
+        </div>
+        <div class="div-link">
+            <a routerLink="/auth/register" class="link-register">Registre-se</a>
+        </div>
+    </div>
+</div>
+
+<div id="snackbar">Notification..</div>
